@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Manager</title>
+    <style>
+        body {
+            background-image: url('imagens/fundo.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, h4 {
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="password"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h2> Senai Anchieta </h2>
+        <form>
+            <h3>Autenticação de Rede</h3>
+            <label for="ssid">SSID da Rede:</label>
+            <input type="text" id="ssid" name="SSID" required>
+            
+            <label for="senha-rede">Senha da Rede:</label>
+            <input type="text" id="senha-rede" name="SenhaRede" required>
+            
+            <h3>Endereçamento de rede</h3>
+            <label>IP:</label>
+            <select name="tipo_ip" required>
+                <option value="estatico">IP Estático</option>
+                <option value="dinamico">IP Dinâmico</option>
+            </select>
+            <label for="endereco">Endereço IP:</label>
+            <input type="text" id="endereco" name="Endereco" placeholder="192.168.138.100" required>
+            
+            <label for="mascara">Máscara de Sub-rede:</label>
+            <input type="text" id="mascara" name="Mascara" placeholder="255.255.255.0" required>
+            
+            <label for="gateway">Gateway:</label>
+            <input type="text" id="gateway" name="Gateway" placeholder="192.168.138.100" required>
+            
+            
+            
+            <h3>Modo de Operação</h3>
+            <label>Escolha:</label>
+            <select name="modo_operacao" required>
+                <option value="http">Servidor HTTP</option>
+                <option value="mqtt">Cliente MQTT</option>
+            </select>
+            
+            <label for="broker">Broker (Se Cliente MQTT):</label>
+            <input type="text" id="broker" name="Broker">
+            
+            <h3>Configuração de Banco de Dados</h3>
+            <label>Usar Banco de Dados:</label>
+            <select name="uso_banco" required>
+                <option value="sim">Firebase</option>
+                <option value="nao">Não</option>
+            </select>
+            
+            <label for="email-cadastro">Email para Autenticação do Banco de Dados:</label>
+            <input type="text" id="email-cadastro" name="EmailCadastro">
+            
+            <label for="senha-cadastro">Senha para Autenticação do Banco de dados:</label>
+            <input type="password" id="senha-cadastro" name="SenhaCadastro">
+            
+            <label for="chave-api">Chave API:</label>
+            <input type="text" id="chave-api" name="ChaveAPI">
+            
+            <label for="url-banco">URL do Banco de Dados:</label>
+            <input type="text" id="url-banco" name="URLBanco">
+            
+            <input type="submit" value="Enviar">
+        </form>
+        
+    </div>
+</body>
+</html>
